@@ -1,0 +1,27 @@
+# ninja log v5
+2	433	7239824820163996	test2_autogen/timestamp	19b477df6dea2614
+2	433	7239824820163996	test2_autogen/mocs_compilation.cpp	19b477df6dea2614
+2	433	7239824820163996	C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/timestamp	19b477df6dea2614
+2	433	7239824820163996	C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/mocs_compilation.cpp	19b477df6dea2614
+434	2160	7239824838372169	CMakeFiles/test2.dir/test2_autogen/mocs_compilation.cpp.obj	c58195607e2f6c42
+463	2165	7239824838423550	CMakeFiles/test2.dir/main.cpp.obj	d7d1a90a760a6bc
+457	4733	7239824864120650	CMakeFiles/test2.dir/mainwindow.cpp.obj	70119d3ffddbee8f
+4734	5170	7239824868363545	test2.exe	85a7562ddb6204e2
+4	180	7239830413423516	test2_autogen/timestamp	19b477df6dea2614
+4	180	7239830413423516	test2_autogen/mocs_compilation.cpp	19b477df6dea2614
+4	180	7239830413423516	C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/timestamp	19b477df6dea2614
+4	180	7239830413423516	C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/mocs_compilation.cpp	19b477df6dea2614
+188	3666	7239830448240429	CMakeFiles/test2.dir/mainwindow.cpp.obj	70119d3ffddbee8f
+3667	3937	7239830450536193	test2.exe	85a7562ddb6204e2
+2	154	7239830897519216	test2_autogen/timestamp	19b477df6dea2614
+2	154	7239830897519216	test2_autogen/mocs_compilation.cpp	19b477df6dea2614
+2	154	7239830897519216	C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/timestamp	19b477df6dea2614
+2	154	7239830897519216	C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/mocs_compilation.cpp	19b477df6dea2614
+162	3654	7239830932466204	CMakeFiles/test2.dir/mainwindow.cpp.obj	70119d3ffddbee8f
+3655	3914	7239830934593353	test2.exe	85a7562ddb6204e2
+3	159	7239833696072006	test2_autogen/timestamp	19b477df6dea2614
+3	159	7239833696072006	test2_autogen/mocs_compilation.cpp	19b477df6dea2614
+3	159	7239833696072006	C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/timestamp	19b477df6dea2614
+3	159	7239833696072006	C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/mocs_compilation.cpp	19b477df6dea2614
+167	3637	7239833730798247	CMakeFiles/test2.dir/mainwindow.cpp.obj	70119d3ffddbee8f
+3638	3900	7239833732991761	test2.exe	85a7562ddb6204e2
