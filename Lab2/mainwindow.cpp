@@ -5,7 +5,7 @@
 #include <time.h>
 #include <math.h>
 
-int maxX=1000, maxY=1000;
+int maxX=500, maxY=500;
 
 float PL(float f, float d)
 {
