@@ -4,7 +4,7 @@
 #include <QPainter>
 #include <time.h>
 #include <math.h>
-
+#include "Heatmap.h"
 
 int maxX=600, maxY=600;
 
@@ -188,165 +188,146 @@ int* N_of_obstructions(QPainter* Pix, QPixmap* Map, int *Number, int x0, int x1,
     return Number;
 }
 
-class Obstruction { //препятствия
-public:
-    bool irrglass; //IRR стекло
-    bool doubleglass; //стеклопакет
-    bool concrete; //бетон
-    bool wood; //дерево
-};
-
-class Wall: public Obstruction
+void Wall::wall(QPainter* Pix, int x0, int x1, int y0, int y1) //линия
 {
-public:
-    void wall(QPainter* Pix, int x0, int x1, int y0, int y1) //линия
+    int deltax = abs(x1 - x0);
+    int deltay = abs(y1 - y0);
+    int signx = x0 < x1 ? 1 : -1;
+    int signy = y0 < y1 ? 1 : -1;
+    int error = deltax - deltay;
+    if (concrete == true)
     {
-        int deltax = abs(x1 - x0);
-        int deltay = abs(y1 - y0);
-        int signx = x0 < x1 ? 1 : -1;
-        int signy = y0 < y1 ? 1 : -1;
-        int error = deltax - deltay;
-        if (concrete == true)
+        Pix->setPen(QColor(34, 34, 34, 255));
+    }
+    if (wood == true)
+    {
+        Pix->setPen(QColor(161, 104, 7, 255));
+    }
+    if (doubleglass == true)
+    {
+        Pix->setPen(QColor(77, 101, 110, 255));
+    }
+    if (irrglass == true)
+    {
+        Pix->setPen(QColor(190, 208, 215, 255));
+    }
+    DrawPixel(Pix, x1, y1);
+    while (x0 != x1 || y0 != y1)
+    {
+        DrawPixel(Pix, x0, y0);
+        int error2 = error*2;
+        if (error2 > -deltay)
         {
-            Pix->setPen(QColor(34, 34, 34, 255));
+            error -= deltay;
+            x0 += signx;
         }
-        if (wood == true)
+        if (error2 < deltax)
         {
-            Pix->setPen(QColor(161, 104, 7, 255));
-        }
-        if (doubleglass == true)
-        {
-            Pix->setPen(QColor(77, 101, 110, 255));
-        }
-        if (irrglass == true)
-        {
-            Pix->setPen(QColor(190, 208, 215, 255));
-        }
-        DrawPixel(Pix, x1, y1);
-        while (x0 != x1 || y0 != y1)
-        {
-            DrawPixel(Pix, x0, y0);
-            int error2 = error*2;
-            if (error2 > -deltay)
-            {
-                error -= deltay;
-                x0 += signx;
-            }
-            if (error2 < deltax)
-            {
-                error += deltax;
-                y0 += signy;
-            }
+            error += deltax;
+            y0 += signy;
         }
     }
-};
+}
 
-class Circle: public Obstruction
+
+void Circle::circle(QPainter* Pix, int X1, int Y1, int R) //круг
 {
-public:
-    void circle(QPainter* Pix, int X1, int Y1, int R) //круг
+    int x = 0;
+    int y = R;
+    int delta = 1 - 2 * R;
+    int error = 0;
+    if (concrete == true)
     {
-        int x = 0;
-        int y = R;
-        int delta = 1 - 2 * R;
-        int error = 0;
-        if (concrete == true)
+        Pix->setPen(QColor(34, 34, 34, 255));
+    }
+    if (wood == true)
+    {
+        Pix->setPen(QColor(161, 104, 7, 255));
+    }
+    if (doubleglass == true)
+    {
+        Pix->setPen(QColor(77, 101, 110, 255));
+    }
+    if (irrglass == true)
+    {
+        Pix->setPen(QColor(190, 208, 215, 255));
+    }
+    while (y >= x)
+    {
+        DrawPixel(Pix, X1 + x, Y1 + y);
+        DrawPixel(Pix, X1 + x, Y1 - y);
+        DrawPixel(Pix, X1 - x, Y1 + y);
+        DrawPixel(Pix, X1 - x, Y1 - y);
+        DrawPixel(Pix, X1 + y, Y1 + x);
+        DrawPixel(Pix, X1 + y, Y1 - x);
+        DrawPixel(Pix, X1 - y, Y1 + x);
+        DrawPixel(Pix, X1 - y, Y1 - x);
+        error = 2 * (delta + y) - 1;
+        if ((delta < 0) && (error <= 0))
         {
-            Pix->setPen(QColor(34, 34, 34, 255));
+            delta += 2 * ++x + 1;
+            continue;
         }
-        if (wood == true)
+        if ((delta > 0) && (error > 0))
         {
-            Pix->setPen(QColor(161, 104, 7, 255));
+            delta -= 2 * --y + 1;
+            continue;
         }
-        if (doubleglass == true)
+        delta += 2 * (++x - --y);
+    }
+}
+
+void Square::square(QPainter* Pix, int x0, int x1, int y0, int y1) //прямоугольник
+{
+    if (concrete == true)
+    {
+        Pix->setPen(QColor(34, 34, 34, 255));
+    }
+    if (wood == true)
+    {
+        Pix->setPen(QColor(161, 104, 7, 255));
+    }
+    if (doubleglass == true)
+    {
+        Pix->setPen(QColor(77, 101, 110, 255));
+    }
+    if (irrglass == true)
+    {
+        Pix->setPen(QColor(190, 208, 215, 255));
+    }
+    if (x0<x1)
+    {
+        for (int x=x0; x<x1; x++)
         {
-            Pix->setPen(QColor(77, 101, 110, 255));
-        }
-        if (irrglass == true)
-        {
-            Pix->setPen(QColor(190, 208, 215, 255));
-        }
-        while (y >= x)
-        {
-            DrawPixel(Pix, X1 + x, Y1 + y);
-            DrawPixel(Pix, X1 + x, Y1 - y);
-            DrawPixel(Pix, X1 - x, Y1 + y);
-            DrawPixel(Pix, X1 - x, Y1 - y);
-            DrawPixel(Pix, X1 + y, Y1 + x);
-            DrawPixel(Pix, X1 + y, Y1 - x);
-            DrawPixel(Pix, X1 - y, Y1 + x);
-            DrawPixel(Pix, X1 - y, Y1 - x);
-            error = 2 * (delta + y) - 1;
-            if ((delta < 0) && (error <= 0))
-            {
-                delta += 2 * ++x + 1;
-                continue;
-            }
-            if ((delta > 0) && (error > 0))
-            {
-                delta -= 2 * --y + 1;
-                continue;
-            }
-            delta += 2 * (++x - --y);
+            DrawPixel(Pix, x, y0);
+            DrawPixel(Pix, x, y1);
         }
     }
-};
-
-class Square: public Obstruction
-{
-public:
-    void square(QPainter* Pix, int x0, int x1, int y0, int y1) //прямоугольник
+    if (x1<x0)
     {
-        if (concrete == true)
+        for (int x=x1; x<x0; x++)
         {
-            Pix->setPen(QColor(34, 34, 34, 255));
-        }
-        if (wood == true)
-        {
-            Pix->setPen(QColor(161, 104, 7, 255));
-        }
-        if (doubleglass == true)
-        {
-            Pix->setPen(QColor(77, 101, 110, 255));
-        }
-        if (irrglass == true)
-        {
-            Pix->setPen(QColor(190, 208, 215, 255));
-        }
-        if (x0<x1)
-        {
-            for (int x=x0; x<x1; x++)
-            {
-                DrawPixel(Pix, x, y0);
-                DrawPixel(Pix, x, y1);
-            }
-        }
-        if (x1<x0)
-        {
-            for (int x=x1; x<x0; x++)
-            {
-                DrawPixel(Pix, x, y0);
-                DrawPixel(Pix, x, y1);
-            }
-        }
-        if (y0<y1)
-        {
-            for (int y=y0; y<y1; y++)
-            {
-                DrawPixel(Pix, x0, y);
-                DrawPixel(Pix, x1, y);
-            }
-        }
-        if (y1<y0)
-        {
-            for (int y=y1; y<y0; y++)
-            {
-                DrawPixel(Pix, x0, y);
-                DrawPixel(Pix, x1, y);
-            }
+            DrawPixel(Pix, x, y0);
+            DrawPixel(Pix, x, y1);
         }
     }
-};
+    if (y0<y1)
+    {
+        for (int y=y0; y<y1; y++)
+        {
+            DrawPixel(Pix, x0, y);
+            DrawPixel(Pix, x1, y);
+        }
+    }
+    if (y1<y0)
+    {
+        for (int y=y1; y<y0; y++)
+        {
+            DrawPixel(Pix, x0, y);
+            DrawPixel(Pix, x1, y);
+        }
+    }
+}
 
 
 void Pen_Color (QPainter* p,float sigPower)
@@ -355,73 +336,29 @@ void Pen_Color (QPainter* p,float sigPower)
     {
         p->setPen(QColor(255, 0, 0, 255)); // <-- задание цвета красный
     }
-    if (sigPower < -54 && sigPower >= -59)
-    {
-        p->setPen(QColor(246, 70, 0, 255)); //
-    }
-    if (sigPower < -59 && sigPower >= -64)
-    {
-        p->setPen(QColor(228, 110, 0, 255)); // красноорнжевый
-    }
-    if (sigPower < -64 && sigPower >= -69)
-    {
-        p->setPen(QColor(228, 140, 0, 255)); //
-    }
     if (sigPower < -69 && sigPower >= -74)
     {
         p->setPen(QColor(255, 175, 0, 255)); //оранжевый
     }
-    if (sigPower < -74 && sigPower >= -79)
-    {
-        p->setPen(QColor(255, 200, 0, 255)); //
-    }
-    if (sigPower < -79 && sigPower >= -84)
+    if (sigPower < -74 && sigPower >= -84)
     {
         p->setPen(QColor(255, 255, 0, 255)); //желтый
     }
-    if (sigPower < -84 && sigPower >= -89)
-    {
-        p->setPen(QColor(230, 255, 0, 255)); //
-    }
-    if (sigPower < -89 && sigPower >= -94)
-    {
-        p->setPen(QColor(216, 255, 0, 255)); //лаймовый
-    }
-    if (sigPower < -94 && sigPower >= -99)
-    {
-        p->setPen(QColor(150, 255, 0, 255)); //
-    }
-    if (sigPower < -99 && sigPower >= -104)
+    if (sigPower < -84 && sigPower >= -119)
     {
         p->setPen(QColor(36, 255, 0, 255)); //зелёный
-    }
-    if (sigPower < -104 && sigPower >= -109)
-    {
-        p->setPen(QColor(0, 255, 70, 255)); //
-    }
-    if (sigPower < -109 && sigPower >= -114)
-    {
-        p->setPen(QColor(0, 255, 143, 255)); //зелёноголубой
-    }
-    if (sigPower < -114 && sigPower >= -119)
-    {
-        p->setPen(QColor(0, 255, 180, 255)); //
     }
     if (sigPower < -119 && sigPower >= -124)
     {
         p->setPen(QColor(0, 255, 255, 255)); //голубой
     }
-    if (sigPower < -124 && sigPower >= -129)
-    {
-        p->setPen(QColor(0, 180, 255, 255)); //
-    }
-    if (sigPower < -129 && sigPower >= -134)
+    if (sigPower < -124 && sigPower >= -134)
     {
         p->setPen(QColor(0, 130, 255, 255)); //синий
     }
     if (sigPower < -134)
     {
-        p->setPen(QColor(40, 0, 255, 255)); //глубокий синий
+        p->setPen(QColor(40, 0, 255, 255)); //фиолетовый
     }
 }
 
@@ -469,48 +406,4 @@ void Fill_Field(QPainter* p, QPixmap* map,QImage* image, int cellPosX, int cellP
             p->drawPoint(i, j);
         }
     }
-}
-
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-{
-    QGraphicsScene* scene = new QGraphicsScene();
-
-    int onePixDistance = 10; //m
-    int TxPower = 23;
-    int antGain = 12;
-    float freq=2.5;
-    srand(time(NULL)); //установка точки 5G New Radio
-    int cellPosX =rand()%maxX;
-    int cellPosY=rand()%maxY;
-    QPixmap map(maxX, maxY); // создаем карту для рисования
-    QPainter p(&map);
-
-    Circle wall; //стена
-    wall.concrete = true;
-    wall.circle(&p, 500, 450, 130);
-
-    Wall Fence; //забор
-    Fence.wood = true;
-    Fence.wall(&p, 200, 500, 100, 50);
-
-    Square Office; //офис
-    Office.doubleglass = true;
-    Office.square(&p, 50, 300, 150, 400);
-
-    QImage image = map.toImage();
-
-    Fill_Field(&p, &map,&image, cellPosX, cellPosY, onePixDistance, TxPower, antGain, freq);
-
-    p.setPen(QColor(255, 255, 255, 255)); //нарисованная точка доступа
-    p.drawPoint(cellPosX, cellPosY);
-
-    p.end();
-    scene->addPixmap(map);
-    QGraphicsView* view = new QGraphicsView(scene);
-    setCentralWidget(view);
-}
-
-MainWindow::~MainWindow()
-{
 }
