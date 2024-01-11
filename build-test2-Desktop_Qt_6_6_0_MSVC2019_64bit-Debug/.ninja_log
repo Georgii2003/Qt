@@ -1,9 +1,0 @@
-# ninja log v5
-3	503	7239848869563263	test2_autogen/timestamp	fe562fbd6fc1dd24
-3	503	7239848869563263	test2_autogen/mocs_compilation.cpp	fe562fbd6fc1dd24
-3	503	7239848869563263	C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/timestamp	fe562fbd6fc1dd24
-3	503	7239848869563263	C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/mocs_compilation.cpp	fe562fbd6fc1dd24
-517	2417	7239848889855343	CMakeFiles/test2.dir/main.cpp.obj	49961b1624b1e72e
-504	2425	7239848889956504	CMakeFiles/test2.dir/test2_autogen/mocs_compilation.cpp.obj	c58195607e2f6c42
-510	5041	7239848916017570	CMakeFiles/test2.dir/mainwindow.cpp.obj	2390618dfe7969f2
-5042	5622	7239848921706391	test2.exe	85a7562ddb6204e2
