@@ -1,4 +1,4 @@
-C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Programming/Qt/test2/mainwindow.h \
+C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/test2_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Programming/Qt/Lab2/mainwindow.h \
   C:/Programm/Qt/6.6.0/msvc2019_64/include/QtCore/q20functional.h \
   C:/Programm/Qt/6.6.0/msvc2019_64/include/QtCore/q20memory.h \
   C:/Programm/Qt/6.6.0/msvc2019_64/include/QtCore/q20type_traits.h \

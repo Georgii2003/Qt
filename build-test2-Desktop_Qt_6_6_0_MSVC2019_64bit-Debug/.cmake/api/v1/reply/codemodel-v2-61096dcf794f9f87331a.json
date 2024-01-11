@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-f501ef2db08c8943b2ba.json",
+					"jsonFile" : "directory-.-Debug-03484c0e3f96823224bc.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -30,7 +30,7 @@
 					[
 						0
 					],
-					"name" : "visual",
+					"name" : "test2",
 					"targetIndexes" : 
 					[
 						0,
@@ -43,23 +43,23 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "visual::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-visual-Debug-4078808ca726f4f17783.json",
-					"name" : "visual",
+					"id" : "test2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test2-Debug-ffb8c7044fc7ed6cddea.json",
+					"name" : "test2",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "visual_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-visual_autogen-Debug-e8e85e7162dec38005ae.json",
-					"name" : "visual_autogen",
+					"id" : "test2_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test2_autogen-Debug-a2d58a67aaac0aa28040.json",
+					"name" : "test2_autogen",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "visual_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-visual_autogen_timestamp_deps-Debug-3db9601e295f249f7ffb.json",
-					"name" : "visual_autogen_timestamp_deps",
+					"id" : "test2_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test2_autogen_timestamp_deps-Debug-cc5c9ff62a5934c22454.json",
+					"name" : "test2_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
 			]
@@ -68,7 +68,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Programming/Qt/build-Lab2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug",
+		"build" : "C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug",
 		"source" : "C:/Programming/Qt/Lab2"
 	},
 	"version" : 

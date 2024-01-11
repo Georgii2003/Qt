@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Programming/Qt/build-Lab_2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug"
+			"value" : "c:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -379,7 +379,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Programming/Qt/build-Lab_2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -475,7 +475,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Programming/Qt/Lab_2"
+			"value" : "C:/Programming/Qt/Lab2"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -679,7 +679,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/Lab_2"
+			"value" : "C:/Program Files (x86)/test2"
 		},
 		{
 			"name" : "CMAKE_INSTALL_RUNSTATEDIR",
@@ -943,7 +943,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Programming/Qt/build-Lab_2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/.qtc/package-manager/auto-setup.cmake"
+			"value" : "C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug/.qtc/package-manager/auto-setup.cmake"
 		},
 		{
 			"name" : "CMAKE_PROJECT_NAME",
@@ -955,7 +955,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Lab_2"
+			"value" : "test2"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1392,42 +1392,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "1"
-		},
-		{
-			"name" : "Lab_2_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Programming/Qt/build-Lab_2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug"
-		},
-		{
-			"name" : "Lab_2_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "Lab_2_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Programming/Qt/Lab_2"
 		},
 		{
 			"name" : "QT_ADDITIONAL_HOST_PACKAGES_PREFIX_PATH",
@@ -6051,7 +6015,43 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files (x86)/Lab_2"
+			"value" : "C:/Program Files (x86)/test2"
+		},
+		{
+			"name" : "test2_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_64bit-Debug"
+		},
+		{
+			"name" : "test2_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "test2_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Programming/Qt/Lab2"
 		}
 	],
 	"kind" : "cache",

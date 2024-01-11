@@ -317,7 +317,7 @@ test2_BINARY_DIR:STATIC=C:/Programming/Qt/build-test2-Desktop_Qt_6_6_0_MSVC2019_
 test2_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-test2_SOURCE_DIR:STATIC=C:/Programming/Qt/test2
+test2_SOURCE_DIR:STATIC=C:/Programming/Qt/Lab2
 
 
 ########################
@@ -384,7 +384,7 @@ CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
 CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=C:/Programming/Qt/test2
+CMAKE_HOME_DIRECTORY:INTERNAL=C:/Programming/Qt/Lab2
 //ADVANCED property for variable: CMAKE_INSTALL_BINDIR
 CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_DATADIR

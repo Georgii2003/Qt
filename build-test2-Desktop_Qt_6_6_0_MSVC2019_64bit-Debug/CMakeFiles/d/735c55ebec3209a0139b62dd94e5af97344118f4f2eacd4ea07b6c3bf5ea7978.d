@@ -424,13 +424,13 @@ test2_autogen/timestamp: \
   C:/Programm/Qt/Tools/CMake_64/share/cmake-3.24/Modules/Platform/Windows-MSVC.cmake \
   C:/Programm/Qt/Tools/CMake_64/share/cmake-3.24/Modules/Platform/Windows.cmake \
   C:/Programm/Qt/Tools/CMake_64/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake \
+  C:/Programming/Qt/Lab2/CMakeLists.txt \
+  C:/Programming/Qt/Lab2/main.cpp \
+  C:/Programming/Qt/Lab2/mainwindow.cpp \
+  C:/Programming/Qt/Lab2/mainwindow.h \
   .qtc/package-manager/auto-setup.cmake \
   CMakeFiles/3.24.2/CMakeCXXCompiler.cmake \
   CMakeFiles/3.24.2/CMakeRCCompiler.cmake \
   CMakeFiles/3.24.2/CMakeSystem.cmake \
   CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx \
-  C:/Programming/Qt/test2/CMakeLists.txt \
-  C:/Programming/Qt/test2/main.cpp \
-  C:/Programming/Qt/test2/mainwindow.cpp \
-  C:/Programming/Qt/test2/mainwindow.h \
   C:/Programm/Qt/Tools/CMake_64/bin/cmake.exe

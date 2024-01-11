@@ -5,7 +5,7 @@
 #include <time.h>
 #include <math.h>
 
-int maxX=1000, maxY=1000;
+int maxX=600, maxY=600;
 
 float PL(float f, float d)
 {
@@ -109,66 +109,66 @@ int* N_of_obstructions(QPainter* Pix, QPixmap* Map, int *Number, int x0, int x1,
             }
             if (((x0-1==Xless) || (x0+1==Xless) || (x0==Xless)) && ((y0==Yless) || (y0-1==Yless) || (y0+1==Yless)))
             {
-            Xless=x0;
-            Yless=y0;
+                Xless=x0;
+                Yless=y0;
             }
             else
             {
-            Number[0]+=1;
+                Number[0]+=1;
             }
         }
         if (red2==161 && green2==104 && blue2==7) //дерево
         {
             if ((Xless==-50) && (Yless==-50))
             {
-            Number[1]+=1;
-            Xless=x0;
-            Yless=y0;
+                Number[1]+=1;
+                Xless=x0;
+                Yless=y0;
             }
             if (((x0-1==Xless) || (x0+1==Xless) || (x0==Xless)) && ((y0==Yless) || (y0-1==Yless) || (y0+1==Yless)))
             {
-            Xless=x0;
-            Yless=y0;
+                Xless=x0;
+                Yless=y0;
             }
             else
             {
-            Number[1]+=1;
+                Number[1]+=1;
             }
         }
         if (red2==77 && green2==101 && blue2==110) //IRR стекло
         {
             if ((Xless==-50) && (Yless==-50))
             {
-            Number[2]+=1;
-            Xless=x0;
-            Yless=y0;
+                Number[2]+=1;
+                Xless=x0;
+                Yless=y0;
             }
             if (((x0-1==Xless) || (x0+1==Xless) || (x0==Xless)) && ((y0==Yless) || (y0-1==Yless) || (y0+1==Yless)))
             {
-            Xless=x0;
-            Yless=y0;
+                Xless=x0;
+                Yless=y0;
             }
             else
             {
-            Number[2]+=1;
+                Number[2]+=1;
             }
         }
         if (red2==190 && green2==208 && blue2==215) //Стеклопакет
         {
             if ((Xless==-50) && (Yless==-50))
             {
-            Number[3]+=1;
-            Xless=x0;
-            Yless=y0;
+                Number[3]+=1;
+                Xless=x0;
+                Yless=y0;
             }
             if (((x0-1==Xless) || (x0+1==Xless) || (x0==Xless)) && ((y0==Yless) || (y0-1==Yless) || (y0+1==Yless)))
             {
-            Xless=x0;
-            Yless=y0;
+                Xless=x0;
+                Yless=y0;
             }
             else
             {
-            Number[3]+=1;
+                Number[3]+=1;
             }
         }
 
