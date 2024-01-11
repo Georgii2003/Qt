@@ -5,6 +5,7 @@
 #include <time.h>
 #include <math.h>
 
+
 int maxX=600, maxY=600;
 
 float PL(float f, float d)
